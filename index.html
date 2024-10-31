@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https: http:;">
+        <title>La Variété Magazine</title>
+	  <!-- link the webpage's stylesheet -->
+	  <link rel="stylesheet" href="styles.css" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <img src="home.png" alt="La Variété Magazine Header" class="header-image">
+        <!-- Navigation for smaller screens (mobile) -->
+        <nav class="mobile-nav">
+            <button class="menu-btn">Menu</button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="index.html">Home</a>
+                <a href="submissions.html">Submissions</a>
+                <a href="articles.html">Articles</a>
+            </div>
+        </nav>
+
+        <!-- Navigation for larger screens (desktop) -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="submissions.html">Submissions</a></li>
+                <li><a href="articles.html">Articles</a></li>
+            </ul>
+        </nav>
+    
+        <main>
+            <h1>Welcome to La Variété Magazine</h1>
+            <div class="mission-statement">
+                <h2>Our Mission</h2>
+                <p>At La Variété Magazine, we celebrate the diverse voices and talents of students around the world, showcasing their creativity and talent. Our mission is to inform, inspire, and ignite meaningful conversations among our peers through engaging storytelling and thought-provoking content.</p>
+            </div>
+            <div class="popular-articles">
+                <h2>Popular Articles</h2>
+                <div id="top-articles-list" class="article-grid"></div>
+            </div>
+        </main>   
+        <div id="articleModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    <script src="script.js"></script>
+    </body>
+</html>

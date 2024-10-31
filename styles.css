@@ -1,0 +1,482 @@
+:root {
+    --text-dark: #2b2b2b;
+    --text-light: #f4edd7;
+    --background-color: #f1ddcf;
+    --white: #f4edd7;
+    --black: #2b2b2b;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --light-pink: #ffa69e;
+    --pink: #da92ae;
+    --red: #da4167;
+    --coral: #e0777d;
+    --orange: #fcaa67;
+    --yellow: #ffff82;
+    --green: #54b2c0;
+    --blue: #7fc9d3;
+    --light-blue: #b4dde2;
+    --light-purple: #b078b6;
+    --purple: #a63fb2;
+    --brown: #ac8469;
+    /*--light-purple: #88498f;
+    --blue: #54c1cf;
+    --pink: #c9678d;
+    --dark-red: #8d405d;
+    --purple: #2f0a28;
+    --blue: #4b6070;
+    --dark-green: #4a819e;
+    --brown: #917460;
+    #<a target="_blank" href="https://icons8.com/icon/50696/paper-clamp">Paper Clamp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>*/
+}
+
+body {
+    font-family: 'Itim', Arial, sans-serif; /* Use Itim font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: url('paper-bg.png') no-repeat center center fixed; /* Set background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    color: var(--text-dark);
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1001; /* Ensure the image is above the nav */
+}
+
+/* Base styling for both mobile and desktop nav */
+nav {
+    background-color: var(--purple);
+    color: var(--light-blue);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none; /* Combined list-style-type, padding, and margin */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0; /* Removed bottom margin */
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    color: var(--light-blue);
+}
+
+nav ul li a.active {
+    background-color: var(--purple);
+}
+
+nav ul li a:hover:not(.active) {
+    background-color: var(--light-blue);
+    color: var(--purple)
+}
+
+/* Mobile navigation (vertical) */
+.mobile-nav {
+    display: block;
+}
+
+.menu-btn {
+    font-family: 'Itim', Arial, sans-serif;
+    background-color: var(--light-blue);
+    color: var(--purple);
+    padding: 12px 16px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-btn.open {
+    background-color: var(--purple);
+    color: var(--light-blue);
+}
+
+.menu-btn:hover {
+    background-color: var(--purple);
+    color: var(--light-blue);
+}
+
+.dropdown-content {
+    font-family: 'Itim', Arial, sans-serif; /* Changed from Playfair Display */
+    display: none;
+    width: 100%;
+    color: var(--purple);
+    background-color: var(--light-blue);
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.dropdown-content a {
+    color: var(--purple);
+    background-color: var(--light-blue);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--purple);
+    color: var(--light-blue);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* Desktop navigation (horizontal) */
+.desktop-nav {
+    display: none;
+}
+
+/* Media Query for larger screens */
+@media screen and (min-width: 768px) {
+    .mobile-nav {
+        display: none; /* Hide mobile nav on larger screens */
+    }
+
+    .desktop-nav {
+        display: block;
+    }
+
+    .desktop-nav ul {
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+    }
+
+    .desktop-nav ul li a {
+        padding: 15px;
+    }
+
+    main {
+        margin-top: 0; /* Remove top margin as the header image will push content down */
+    }
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+h1 {
+    color: var(--blue); /* Deep purple */
+}
+
+h2 {
+    color: var(--pink);
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.google-form {
+    margin-top: 20px;
+    border: 1px solid var(--text-light);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.magazine-title {
+    font-size: 2.5em;
+    color: var(--blue);
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.magazine-subtitle {
+    font-size: 1.2em;
+    color: var(--pink);
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+#article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.article-tile {
+    background-color: var(--white);
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.article-tile:hover {
+    transform: translateY(-5px);
+}
+
+.article-tile.popular {
+    border: 2px solid var(--yellow);
+}
+
+.article-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.article-content {
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 15px;
+}
+
+.article-title {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+    color: var(--blue);
+}
+
+.article-info {
+    font-size: 0.9em;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+.article-excerpt {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.article-tag {
+    background-color: var(--blue);
+    color: var(--text-dark);
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.article-tag:hover {
+    background-color: var(--light-purple);
+}
+
+#tag-filter {
+    margin-bottom: 20px;
+}
+
+.filter-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-color: var(--blue);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-tag:hover {
+    background-color: var(--light-pink);
+}
+
+.filter-tag.active {
+    background-color: var(--light-pink);
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--shadow-color);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 15% auto;
+    padding: 20px;
+    color: var(--text-dark);
+    border: 1px solid var(--text-dark);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+/* Styles for the article content inside the modal */
+
+
+#modalContent img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#full-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#full-article h1 {
+    color: var(--light-purple);
+}
+
+#full-article .article-info {
+    color: var(--pink);
+    font-style: italic;
+}
+
+#full-article img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+#full-article .article-content {
+    line-height: 1.6;
+}
+
+.article-title a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.article-title a:hover {
+    text-decoration: underline;
+}
+
+.article-content h1, .article-content h2, .article-content h3 {
+    color: var(--light-purple);
+    margin-top: 20px;
+}
+
+.article-content p {
+    margin-bottom: 15px;
+}
+
+.article-content ul, .article-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.article-content li {
+    margin-bottom: 5px;
+}
+
+.popular-articles {
+    background: url('arches.png') no-repeat center center fixed; /* Set background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.popular-articles h2 {
+    color: var(--light-purple);
+    margin-bottom: 20px;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/*.popular-badge {
+    background-color: var(--yellow);
+    padding: 2px 5px;
+    border-radius: 3px;
+    border: 3px ridge
+    font-size: 0.8em;
+    display: inline-block;
+    margin-bottom: 5px;
+}*/
+
+/* Styles for the article content inside the modal */
+#modalContent h2 {
+    color: var(--light-purple);
+    margin-bottom: 10px;
+}
+
+#modalContent p {
+    margin-bottom: 15px;
+}
+
+/* Styles for the article content inside the modal */
+
+.tag {
+    display: inline-block; /* Make the tag behave like a block element */
+    background-color: var(--pink); /* Background color for the sticker */
+    color: var(--white); /* Text color */
+    padding: 4px 9px; /* Padding for spacing */
+    margin: 5px; /* Space between tags */
+    border-radius: 17px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+}
+
+.close {
+    background-color: /*var(--pink)*/ var (--white);
+    color: var(--blue);
+    border: none;
+    width: 30px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    float: right;
+    font-weight: bold;
+    font-size: 25px; /* Adjusted font size for better fit */
+    line-height: 30px; /* Set line-height to match height for vertical centering */
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 50%; /* Keep it circular */
+    display: flex; /* Center the text */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.close:hover {
+    /*background-color: var(--blue);*/
+    color: var(--pink);
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        margin-top: 50px; /* Adjust this for mobile nav height */
+    }
+}

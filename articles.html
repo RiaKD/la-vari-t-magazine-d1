@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: https: http:;">
+        <title>La Variété Magazine</title>
+        <!-- link the webpage's stylesheet -->
+        <link rel="stylesheet" href="styles.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    </head>
+	  <link rel="stylesheet" href="styles.css" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <img src="header.png" alt="La Variété Magazine Header" class="header-image">
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav">
+            <button class="menu-btn">Menu</button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="index.html">Home</a>
+                <a href="submissions.html">Submissions</a>
+                <a href="articles.html">Articles</a>
+            </div>
+        </nav>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="submissions.html">Submissions</a></li>
+                <li><a href="articles.html">Articles</a></li>
+            </ul>
+        </nav>
+    
+        <main>  
+            <h1>Articles</h1>
+            <div id="tag-filter">
+                <span class="filter-tag active" data-tag="all" onclick="toggleFilter('all')">All</span>
+                <!-- Other filter tags will be dynamically added here -->
+            </div>
+            <div id="article-list">
+                <!-- Article tiles will be dynamically added here -->
+            </div>
+        </main> 
+
+         <!-- Move the script tag here, just before the closing body tag -->
+         <script src="script.js"></script>
+    </body>
+</html>
